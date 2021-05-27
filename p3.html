@@ -1,0 +1,107 @@
+<!DOCTYPE html >
+
+<html >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ejercicio22a</title>
+	<link rel="stylesheet" type="text/css" href="uno.css" media="screen" />
+	<meta name="author" content="Nacho" />
+	<!-- Date: 2013-11-20 -->
+	
+	<script type="text/javascript">
+				
+		function ejercicio2(){
+			
+			var cadena = prompt("Introduce la cadena:");
+			var separador = " ";
+			var longitud=0;
+			var vector=new Array();
+			var posicion=0;
+			// Convertir la cadena en un array
+			if (cadena.length == 0){
+				ejercicio3();
+				return;
+			}
+			
+			for (var i in cadena)
+			{
+				longitud++;	
+			}
+					
+			vector[posicion]="";
+			for(var i = 0; i < longitud; i++)
+			{
+				if(cadena[i]!=separador)
+				{
+					vector[posicion]+=cadena[i];
+				}
+				else
+				{
+					posicion++;
+					vector[posicion]="";
+					}	
+			}
+						
+			var resultado = "La cadena \""+cadena+"\" ";
+			 // Eliminar los espacios en blanco (este paso es demasiado largo ya que no se utiliza la funcion "replace")
+			var cadenaSinEspacios = "";
+			for(i in vector) {
+			  if(vector[i] != " ") {
+			    cadenaSinEspacios += vector[i];
+			  }
+			}
+			 
+			var letras = cadenaSinEspacios.split("");
+			var letrasReves = cadenaSinEspacios.split("").reverse();
+			 
+			// Este paso tambien es muy largo porque no se utiliza la sentencia "break"
+			var iguales = true;
+			for(i in letras) {
+			  if(letras[i] == letrasReves[i]) {
+			    // Todo bien
+			  }
+			  else {
+			    // Alguna letra es distinta, por lo que ya no es un palindromo
+			    iguales = false;
+			  }
+			}
+			if(iguales) {
+			  resultado += " es un palíndromo";
+			}
+			else {
+			  resultado += " no es un palíndromo";
+			}
+			 
+			alert("La cadena tiene " + vector.length + " palabras" + "\nLa primera palabra es: " + vector[0] + 
+					"\nLa ultima palabra es: " + vector[vector.length-1] +
+					"\nLa cadena en orden inverso es: " + vector.reverse() + 
+					"\nLas palabras ordenadas de la a a la z son: " + vector.sort() + 
+					"\nLas palabras ordenadas de la z a la a son: " + vector.sort().reverse() + 
+					"\n" + resultado);
+        }
+	</script>
+	
+</head>
+<body>
+	<h2>Ejercicio 2a.   Practica II</h2>
+	<div id="enunciado">
+		<p>
+			Leer una cadena de texto mediante el método prompt() y generar un array con las palabras
+			que contiene. Posteriormente, mostrar la siguiente información. Desarrollar el Script, haciendo
+			uso de funciones (documentar y añadir los comentarios que consideréis necesario)<br><br>
+			● Número de palabras<br>
+			● Primera palabra y última palabra<br>
+			● Las palabras colocadas en orden inverso<br>
+			● Las palabras ordenadas de la a a la z<br>
+			● Las palabras ordenadas de la z a la a<br>
+			● Un mensaje indicando si la frase es un palíndromo.<br><br>
+			Una cadena de texto es un palíndromo, si se lee de la misma forma desde la izquierda y desde
+			la derecha. Ejemplo de palindromo complejo: "La ruta natural", “Anita lava la tina”,
+			“Reconocer”<br>
+		</p>
+		
+		<input id="ejecutar" type="button" value="Resultado" onclick="ejercicio2();" />
+		<input id="volver" type="button" value="Volver" onclick="history.go(-1)"/>
+	</div>
+</body>
+</html>

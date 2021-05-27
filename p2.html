@@ -1,0 +1,22 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 2</title>
+<input type="date" id="dateini" min="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>">
+<input type="date" id="datefin" min="<?php echo date("Y-m-d");?>"value="ron<?php echo date("Y-m-d");?>">
+<input type="button" value="copiar" onclick="modificar()">
+ 
+<script>
+function modificar()
+{
+	document.getElementById("datefin").value=document.getElementById("dateini").value;
+}
+</script>
+</head>
+
+<body>
+<p>Esta página muestra los dias</p>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="ISO-8859-1" />
+  <title>Recorrer �rbol</title>
+  <script type="text/javascript">
+  function recorrerArbol(nodo){
+     if(!nodo){
+        return 0;}
+     else{
+        if(nodo.nodeType==1){
+           alert(nodo.nodeName)}
+        if(nodo.nodeType==3){
+           alert(nodo.nodeValue)}
+        
+        var hijos = nodo.childNodes;
+        for(var i = 0; i< hijos.length; i++){
+           recorrerArbol(hijos[i]);
+        }
+        return 0;
+     }
+  }
+  </script>
+</head>
+<body onload="recorrerArbol(document.body)">
+<p>Lorem ipsum dolor <a href="#">sit amet</a>, consectetuer adipiscing elit.
+Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis
+enim. </p>
+
+<p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
+justo,</p>
+<ul>
+  <li>rhoncus ut,</li>
+  <li>imperdiet a,</li>
+  <li>venenatis vitae,</li>
+  <li>justo</li>
+</ul>
+
+<p>Nullam dictum felis eu pede mollis pretium. <a href="#">Integer
+<strong>tincidunt</strong></a>. Cras dapibus. Vivamus elementum semper nisi.
+Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat
+vitae, eleifend ac, enim.</p>
+</body>
+</html>

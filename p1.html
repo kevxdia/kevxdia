@@ -1,14 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta >
 <title>Ejercicio 3 - Arrays simples</title>
 <script type="text/javascript">
-var hoy= new Date();
-var fecha = hoy .getDate() + '-'(hoy.getMonth()+1)+ '-' + hoy.getUTCFullYear();
-var hora = hoy.getHours() + ':'+ hoy.getMinutes()+ ':'+ hoy.setSeconds();
-var fechaYhora= fecha +' '+ hora;
-</script>
+    //<![CDATA[
+    function makeArray() {
+    for (i = 0; i<makeArray.arguments.length; i++)
+    this[i + 1] = makeArray.arguments[i];}
+    var months = new makeArray('Enero','Febrero','Marzo','Abril','Mayo',
+    'Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var yy = date.getYear();
+    var year = (yy < 1000) ? yy + 1900 : yy;
+    document.write("Hoy es " + day + " de " + months[month] + " del " + year);
+    //]]>
+    </script>    
 </head>
 
 <body>
